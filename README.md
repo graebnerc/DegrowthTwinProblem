@@ -1,4 +1,4 @@
-# Degrowth and the Global South: The twin problem of global dependencies
+# Degrowth and the global south: The twin problem of global dependencies
 **[Claudius Gräbner-Radkowitsch](https://claudius-graebner.com/)**
 **and**
 **[Birte Strunk](https://birtestrunk.github.io/)**
