@@ -1,0 +1,57 @@
+# This prints the summary of the screening figure
+# It is based on the file ``, which is created by `setup_data.R`
+here::i_am("R/screening_figure.R")
+library(here)
+load(here("data/tidy/sample_summary.Rdata"))
+load(here("data/tidy/sample_summary_WoSraw.Rdata"))
+
+cat(
+  "KEY NUMBERS IN THE SCREENING FIGURE\n====================================\n",
+  paste("Title, abstract and keyword screening in the Web of Science database\n"),
+  paste("--------------------------------------------------------------------\n"),
+  paste("English keywords:", raw_results_en, "\n"),
+  paste("French keywords:", raw_results_fr, "\n"),
+  paste("German keywords:", raw_results_dt, "\n"),
+  paste("Italian keywords:", 0, "\n"),
+  paste("Spanish keywords:", raw_results_es, "\n"),
+  paste("Portuguese keywords:", raw_results_pt, "\n"),
+  paste("Papers in the initial sample:", raw_sample_size, "\n"),
+  paste("Duplicates removed:", duplicates_removed, "\n"),
+  paste("Consolidated sample:", raw_unique_sample_size,"\n"),
+  paste("Papers removed for being corrections:", corrections_removed, "\n"),
+  paste("Remaining papers for abstract screening: ", n_init_sample, "\n"),
+  paste("Papers dropped after abstract screening:", dropped_abstract_screening, "\n"),
+  paste("Papers for which full text was inaccessible:", inaccessible_papers, "\n"),
+  paste("Papers subject to full-text screening:", (n_init_sample - dropped_abstract_screening-inaccessible_papers), "\n"),
+  paste("Papers dropped after full-text screening:", dropped_fulltext_screening, "\n"),
+  paste("Preliminary set of relevant but not core papers:", prelim_relevant_n, "\n"),
+  paste("Preliminary set of core papers:", prelim_core_n, "\n"),
+  paste("--------------------------------------------------------------------\n"),
+  paste("Referenced papers considered: ", cited_refs_considered, "\n"),
+  paste("Referenced papers already in the sample:", cited_refs_already_there, "\n"),
+  paste("Referenced papers considered irrelevant:", cited_refs_irrelevant, "\n"),
+  paste("Referenced papers considered relevant but not core:", cited_refs_relevant, "\n"),
+  paste("Referenced papers considered core contributions:", cited_refs_core, "\n"),
+  paste("--------------------------------------------------------------------\n"),
+  paste("Publication database from timotheeparrique.com: 586\n"),
+  paste("Publication droped after title and topic screening:", 586-tm_abstract_screened, "\n"),
+  paste("Publications of which the abstracts were screened: ", tm_abstract_screened, "\n"),
+  paste("Publications dropped after abstract screening:", tm_drop_after_abstract, "\n"),
+  paste("Inaccessible publications:", tm_inaccessible_after_abstract, "\n"),
+  paste("Publications of which the full text were screened: ", tm_full_text_screened, "\n"),
+  paste("Publications dropped after full-text screening: ", tm_drop_after_fulltext, "\n"),
+  paste("New publications for the core sample: ", tm_core, "\n"),
+  paste("New publications for the relevant sample: ", tm_relevant, "\n"),
+  paste("--------------------------------------------------------------------\n"),
+  paste("Papers considered via the informal search:", n_informal_additions, "\n"),
+  paste("Informal papers already considered:", informal_additions_already_there, "\n"),
+  paste("Informal papers that were not accessible:", informal_refs_inaccessible, "\n"),
+  paste("Informal papers screened:",
+        n_informal_additions-informal_additions_already_there-informal_refs_inaccessible, "\n"),
+  paste("Informal results that turned out to be core:", informal_cores, "\n"),
+  paste("Informal results that turned out to be relevant:", informal_relevants, "\n"),
+  paste("Size of final core sample:", n_core_sample, "\n"),
+  paste0("Size of final relevant sample: ", n_relevant_sample, "\n"),
+  paste0("Size of final relevant sample (wo core): ",
+         n_relevant_sample-n_core_sample)
+)

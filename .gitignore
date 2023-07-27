@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+data/core_pdf/*.pdf
+README.html
+.DS_Store
+
