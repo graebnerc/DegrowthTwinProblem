@@ -61,8 +61,7 @@ save(list = c(
 
 # Create file for quali assessment of new articles---------
 old_quali <- read_xlsx(
-  path = here("data/manual/Qual-review-Original.xlsx"),
-  sheet = "Paper assessment"
+  path = here("data/manual/Qual-review-Original.xlsx")
   ) %>%
   dplyr::filter(!is.na(`Article Title`))
 
