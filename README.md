@@ -8,7 +8,7 @@ replicate the figures and results for the following paper:
 
 > Gräbner-Radkowitsch, C. and Strunk, B. (2023): 
 Degrowth and the Global South: The twin problem of global dependencies,
-*Ecological Economics*, Vol. X(X), p. XX-XX. DOI: [10.1016/j.ecolecon.2023.107946](https://doi.org/10.1016/j.ecolecon.2023.107946) (open access).
+*Ecological Economics*, Vol. 213. DOI: [10.1016/j.ecolecon.2023.107946](https://doi.org/10.1016/j.ecolecon.2023.107946) (open access).
 
 We also provide spreadsheet versions of the paper overview tables from the 
 paper:
